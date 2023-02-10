@@ -1,2 +1,4 @@
 # Ignore .tar files
 *.tar
+
+wandb/
