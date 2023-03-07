@@ -49,7 +49,6 @@ def visualize_gradients(net, color="C0"):
     net.zero_grad()
     preds = net(imgs)
     loss = F.cross_entropy(preds, labels)
-    breakpoint()
     loss.backward()
     # We limit our visualization to the weight parameters and exclude the bias to reduce the number of plots
     grads = {name: params.grad.data.view(-1).cpu().clone().numpy() for name, params in net.named_parameters() if "weight" in name}
